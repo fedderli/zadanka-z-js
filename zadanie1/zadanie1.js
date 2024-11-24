@@ -1,4 +1,4 @@
-const processText = (text, { uppercase = false, reverse = false, removeSpecialChars = false } = {}) =>{
+const processText = (text, { uppercase = false, reverse = false, removeSpecialChars = false }) =>{
    if(uppercase==true){
       text= text.toUpperCase()
    }
