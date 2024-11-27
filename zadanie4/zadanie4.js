@@ -16,7 +16,7 @@ const filtrowanie = (produkty , {category ,minPrice,maxPrice}) =>{
 }
 
 
-const przefiltrowanyProdukt = filtrowanie(produkty,{category:'nabial',minPrice:3,maxPrice:3})
+const przefiltrowanyProdukt = filtrowanie(produkty,{category:'warzywo',minPrice:1,maxPrice:3})
 
 przefiltrowanyProdukt.forEach(produkt => console.log(`produkt: ${produkt.name}, Kategoria : ${produkt.category}, cena: ${produkt.price}`));
 
