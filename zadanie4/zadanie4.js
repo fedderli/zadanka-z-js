@@ -7,17 +7,16 @@ const produkty = [
     {name:"sok pomaranczowy",price:7,category:'napoj'},
 ]
 const filtrowanie = (produkty , {category ,minPrice,maxPrice}) =>{
-    return produkty.filter(produkt =>{
-        return(
-        produkt.price >= minPrice &&
-        produkt.price <= maxPrice 
-        
-        )
-    })
+    
+    return produkty
+        .filter(produkt =>  (produkt.price >= minPrice) && (produkt.price <= maxPrice))
+        .filter(produkt =>  produkt.category === category)
+    
+    
 }
 
-const przefiltrowanyProdukt = filtrowanie(produkty,{category:'nabial',minPrice:1,maxPrice:3})
 
-przefiltrowanyProdukt.forEach(produkt => {
-    console.log(`produkt: ${produkt.name}, Kategoria : ${produkt.category}, cena: ${produkt.price}`)
-})
+const przefiltrowanyProdukt = filtrowanie(produkty,{category:'nabial',minPrice:3,maxPrice:3})
+
+przefiltrowanyProdukt.forEach(produkt => console.log(`produkt: ${produkt.name}, Kategoria : ${produkt.category}, cena: ${produkt.price}`));
+
