@@ -1,0 +1,52 @@
+const studenci = [
+    {name:'Kamil',grade:23},
+    {name:'Magda',grade:72},
+    {name:'Łukasz',grade:34},
+    {name:'Julia',grade:100},
+]
+
+const obliczSrednia = studenci => {
+    let sum = 0;
+    const ile = studenci.length;
+
+    for (let i = 0; i < ile; i++) {
+        sum = sum + studenci[i].grade; 
+    }
+
+    return sum / ile; 
+}
+
+
+const najlepszyWynik = studenci => {
+    const oceny = studenci.map(student => student.grade)
+    return Math.max(...oceny);
+
+}
+
+const najgorszyWynik = studenci => {
+    const oceny = studenci.map(student => student.grade)
+    return Math.min(...oceny);
+
+}
+
+const wyswietWynik = studenci => {
+    studenci.forEach(({name,grade}) => {
+        console.log(`imie : ${name} ocena : ${grade}`)
+    });
+}
+
+
+
+
+const Srednia = obliczSrednia(studenci)
+console.log(`srednai oczen wszystkich studentów to ${Srednia}`)
+
+const najlepczy = najlepszyWynik(studenci)
+console.log(`najlepszy wynik ${najlepczy} `)
+
+const najgorszy = najgorszyWynik(studenci)
+console.log(`najgorszy wynik ${najgorszy}`)
+
+wyswietWynik(studenci)
+
+
