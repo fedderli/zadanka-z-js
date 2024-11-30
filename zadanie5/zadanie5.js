@@ -17,12 +17,13 @@ class Cart{
     addProduct(product){
         this.prodcutsList.push(product)
     }
-    removeProduct(){
-
+    removeProduct(productName){
+        this.prodcutsList = this.prodcutsList.filter(product => product.name != productName)
     }
     showCart(){
-
-    }
+        console.log("w wózku jest:")
+    this.prodcutsList.forEach(product => {console.log(product.name)})
+        }
 }
 
 
@@ -34,5 +35,10 @@ const cart = new Cart()
 cart.addProduct(mleko)
 cart.addProduct(piwo)
 
-console.log(cart.prodcutsList[0].name)
+cart.showCart()
+
+cart.removeProduct("Piwo")
+
+cart.showCart()
+
 
